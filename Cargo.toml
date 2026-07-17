@@ -68,6 +68,11 @@ ctrlc = { version = "3.4", optional = true }
 # System dependencies
 libc = "0.2"
 
+# TUI dependencies
+ratatui = "0.26"
+crossterm = "0.27"
+
+
 [features]
 default = []
 cli = [
@@ -95,6 +100,12 @@ tauri-api = ["tauri"]
 name = "ahenk-cli"
 path = "src/bin/ahenk-cli.rs"
 required-features = ["cli"]
+
+[[bin]]
+name = "ahenk-tui"
+path = "src/bin/ahenk-tui.rs"
+required-features = ["cli"]
+
 
 [profile.release]
 opt-level = "z"     # Optimize for size
